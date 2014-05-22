@@ -39,9 +39,16 @@ body {
 #entry {
 	width: 100%;
 	height: 40px;
-	box-shadow: inset 0 0 3px #000000;
+	box-shadow: inset 0 0 4px #000000;
 	border: none;
-	border-radius: 3px;
+	border-radius: 4px;
+	padding: 5px;
+	background-image: url("../img/pixel.png");
+	background-repeat: repeat;
+}
+
+#entry:focus {
+	outline: none;
 }
 
 #submit-btn {
