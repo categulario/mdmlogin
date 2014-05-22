@@ -1,0 +1,64 @@
+* {
+	font-family: Liberation sans;
+}
+
+body {
+	background: url(bg.jpg) no-repeat center center fixed;
+	background-size: cover;
+	margin: 0;
+	padding: 0;
+}
+
+#tool-bar {
+	width: 100%;
+	height: 40px;
+}
+
+#sessions {
+	list-style-type: none;
+}
+
+#sessions li {
+	display: inline;
+}
+
+#sessions li a {
+	color: red;
+}
+
+#sessions li a img {
+	height: 40px;
+}
+
+#clock {
+	color: white;
+	text-shadow: 1px 1px 1px #000;
+	text-align: center;
+}
+
+#entry {
+	width: 100%;
+	height: 40px;
+	box-shadow: inset 0 0 3px #000000;
+	border: none;
+	border-radius: 3px;
+}
+
+#submit-btn {
+	width: 100%;
+	height: 40px;
+	color: white;
+	background-color: #7EBC34;
+	margin-top: 20px;
+	border-radius: 3px;
+	border: 1px;
+}
+
+#login-box {
+	display: block;
+	overflow: hidden;
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 250px;
+}
