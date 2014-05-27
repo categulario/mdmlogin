@@ -1,0 +1,28 @@
+{
+  "name": "mdmlogin",
+  "version": "0.1.0",
+  "description": "A login screen for mdm",
+  "main": "index.html",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-less": "^0.11.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/developingo/mdmlogin.git"
+  },
+  "keywords": [
+    "login",
+    "mdm"
+  ],
+  "author": "@developingo",
+  "license": "GPLv3",
+  "bugs": {
+    "url": "https://github.com/developingo/mdmlogin/issues"
+  },
+  "homepage": "https://github.com/developingo/mdmlogin"
+}
