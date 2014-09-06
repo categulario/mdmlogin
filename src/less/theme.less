@@ -17,27 +17,29 @@ form {
 }
 
 #tool-bar {
-	width: 100%;
-	height: 40px;
-}
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	margin: 40px;
 
-#sessions {
-	list-style-type: none;
-}
-
-#sessions li {
-	display: inline;
-}
-
-#sessions li a {
-	color: red;
-}
-
-#sessions li a img {
-	height: 40px;
+	button {
+		font-size: 30px;
+	}
 }
 
 #login-message {
+	color: white;
+	text-shadow: 1px 1px 1px #000;
+	text-align: center;
+}
+
+#login-clock {
+	color: white;
+	text-shadow: 1px 1px 1px #000;
+	text-align: center;
+}
+
+#login-countdown {
 	color: white;
 	text-shadow: 1px 1px 1px #000;
 	text-align: center;
@@ -90,4 +92,41 @@ form {
 	height: 400px;
 	margin-left: -200px;
 	margin-top: -200px;
+}
+
+#message {
+	padding: 10px;
+	border-radius: 5px;
+	background-color: #31B0D5;
+	color: #ffffff;
+	margin-bottom: 5px;
+	opacity: .65;
+}
+
+#message:empty {
+	display: none;
+}
+
+#message.error {
+	background-color: #c9302c;
+}
+
+#sessions-box {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	margin: 40px;
+
+	li {
+		display: inline-block;
+		margin-right: 7px;
+		padding: 5px;
+		background-color: #7ebc34;
+		border-radius: 5px;
+
+		img {
+			width: 40px;
+			height: 40px;
+		}
+	}
 }

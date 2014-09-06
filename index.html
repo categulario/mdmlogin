@@ -2,7 +2,8 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<link href="assets/css/theme.css" rel="stylesheet" media="screen">
+		<link rel="stylesheet" href="assets/css/theme.css" media="screen">
+		<link rel="stylesheet" type="text/css" href="vendor/fontawesome/css/font-awesome.min.css">
 		<script type="text/javascript">
 			var users = Array();
 
@@ -22,76 +23,75 @@
 
 			// Called by MDM to set the welcome message
 			function set_welcome_message(message) {
-				document.getElementById("welcome_message").innerHTML = message;
+				document.getElementById("login-message").innerHTML = message;
 			}
 
 			// Called by MDM to update the clock
 			function set_clock(message) {
-				document.getElementById("clock").innerHTML = message;
+				document.getElementById("login-clock").innerHTML = message;
 			}
 
 			// Called by MDM to allow the user to input a username
 			function mdm_prompt(message) {
 				mdm_enable();
-				document.getElementById("entry").placeholder = message;
+
 				document.getElementById("entry").value = "";
-				document.getElementById("entry").type = "text";
 				document.getElementById("entry").focus();
+
+				document.getElementById("pass").value = "";
 			}
 
 			// Called by MDM to allow the user to input a password
 			function mdm_noecho(message) {
 				mdm_enable();
-				document.getElementById("entry").placeholder = message;
-				document.getElementById("entry").value = "";
-				document.getElementById("entry").type = "password";
-				document.getElementById("entry").focus();
+
+				document.getElementById("pass").value = "";
+				document.getElementById("pass").focus();
 			}
 
 			// Called by MDM to show a message (usually "Please enter your username")
 			function mdm_msg(message) {
 				document.getElementById("message").innerHTML = message;
+				document.getElementById("message").className = "";
 			}
 
 			// Called by MDM to show a timed login countdown
 			function mdm_timed(message) {
-				document.getElementById("timed").innerHTML = message;
+				document.getElementById("login-countdown").innerHTML = message;
 			}
 
 			// Called by MDM to show an error
 			function mdm_error(message) {
-				if (message !== "") {
-					document.getElementById("error").style.display = 'block';
-				}
-				else {
-					document.getElementById("error").style.display = 'none';
-				}
-				document.getElementById("error").innerHTML = message;
+				document.getElementById('message').className = 'error';
+				document.getElementById("message").innerHTML = message;
 			}
 
 			// Send user input to MDM
 			function send_login() {
-				// read the value before we disable the field, as it will be changed to "disabled"
-				var value = document.getElementById("entry").value;
+				// read the value before we disable the field,
+				// as it will be changed to "disabled"
+				var username = document.getElementById("entry").value;
+				var password = document.getElementById("pass").value;
+
 				mdm_disable();
-				alert("LOGIN###" + value);
+
+				alert("LOGIN###" + username);
+				alert("LOGIN###" + password);
+
 				return false;
 			}
 
 			function init() {
-				document.getElementById("error").style.display = 'none';
+				document.getElementById("message").innerHTML = '';
 			}
 
 			// Called by MDM to add a user to the list of users
 			function mdm_add_user(username, gecos) {
-					link.setAttribute('href', "javascript:alert('USER###" + username + "')");
-					picture.setAttribute('src', "file:///home/"+username+"/.face");
-					picture.setAttribute('onerror', "this.src='file:///usr/share/pixmaps/nobody.png';");
+				// nothing to do here
 			}
 
 			// Called by MDM to add a session to the list of sessions
 			function mdm_add_session(session_name, session_file) {
-
 				session_name = session_name.replace("Ubuntu", "Unity");
 
 				var filename = session_name.toLowerCase();
@@ -106,13 +106,13 @@
 
 				var picture = document.createElement('img');
 					picture.setAttribute('class', "session-picture");
-					picture.setAttribute('src', "img/sessions/"+filename+".svg");
+					picture.setAttribute('src', "assets/img/sessions/"+filename+".svg");
 					picture.setAttribute('onerror', "this.src='assets/img/sessions/default.svg';");
 
 				li.appendChild(link);
 				link.appendChild(picture);
 
-				var src = document.getElementById("sessions");
+				var src = document.getElementById("sessions-box");
 				src.appendChild(li);
 			}
 
@@ -144,39 +144,52 @@
 	</head>
 	<body>
 		<div id="tool-bar">
-			<div id="sessions"></div>
-
 			<div id="options">
-				<a class="btn btn-small btn-alert" href="#" onClick="alert('LANGUAGE###');" title="$selectlanguage"><i class="icon-globe"> </i> $language</a>
-				<a class="btn btn-small" href="#" onClick="alert('SHUTDOWN###');" title="$shutdown" id="shutdown"><i class="icon-off"></i></a>
-				<a class="btn btn-small" href="#" onClick="alert('SUSPEND###');" title="$suspend" id="suspend"><i class="icon-download-alt"></i></a>
-				<a class="btn btn-small" href="#" onClick="alert('RESTART###');" title="$restart" id="restart"><i class="icon-refresh"></i></a>
-				<a class="btn btn-small" href="#" onClick="alert('QUIT###');" title="$quit" id="quit"><i class="icon-ban-circle"></i></a>
-				<a class="btn btn-small" href="#" onClick="alert('XDMCP###');" title="$remoteloginviaxdmcp" id="xdmcp"><i class=" icon-share-alt"></i></a>
+				<button href="#" onClick="alert('LANGUAGE###');" title="Idioma"    id="lang">
+					<i class="fa fa-language"></i>
+				</button>
+				<button href="#" onClick="alert('SHUTDOWN###');" title="Apagar"    id="shutdown">
+					<i class="fa fa-power-off"></i>
+				</button>
+				<button href="#" onClick="alert('SUSPEND###');"  title="Suspender" id="suspend">
+					<i class="fa fa-certificate"></i>
+				</button>
+				<button href="#" onClick="alert('RESTART###');"  title="Reiniciar" id="restart">
+					<i class="fa fa-refresh"></i>
+				</button>
+				<button href="#" onClick="alert('QUIT###');"     title="Salir"     id="quit">
+					<i class="fa fa-sign-out"></i>
+				</button>
+				<button href="#" onClick="alert('XDMCP###');"    title="XDMCP"     id="xdmcp">
+					<i class="fa fa-linux"></i>
+				</button>
 			</div>
 		</div>
 
 		<div id="login-box">
-			<h1 id="login-message">Hola de nuevo</h1>
+			<h1 id="login-message">Welcome</h1>
+			<h3 id="login-clock"></h3>
+			<h4 id="login-countdown"></h3>
 
-			<div id="error"></div>
+			<div id="message" class="verde azul"></div>
 
 			<div id="form-wrapper">
 				<form class="form-inline" onSubmit="return send_login();">
-					<input type="text" id="entry">
+					<input type="text" id="entry" placeholder="Nombre de usuario">
 
-					<input type="password" id="pass">
+					<input type="password" id="pass" placeholder="Contraseña">
 
 					<div id="submit-button-wrapper">
-						<button type="submit" id="submit-btn">$ok_label</button>
+						<button type="submit" id="submit-btn">Ok</button>
 					</div>
 				</form>
 			</div>
 		</div>
+
+		<div id="sessions-box"></div>
 
 		<script type="text/javascript">
 			init();
 		</script>
 	</body>
 </html>
-
