@@ -11,15 +11,32 @@ module.exports = function(grunt) {
           compress: true
         },
         files: {
-          'css/theme.css': 'css/theme.less'
+          'assets/css/theme.css': 'src/less/theme.less',
         }
       }
-    }
+    },
+    watch: {
+      options:{
+        livereload: true,
+      },
+
+      css: {
+        files: [
+          'src/less/*.less',
+        ],
+        tasks: [
+          'less:main',
+        ],
+      },
+    },
   });
 
   grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task(s).
-  grunt.registerTask('default', ['less']);
+  grunt.registerTask('default', [
+    'less',
+  ]);
 
 };
