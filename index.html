@@ -8,15 +8,15 @@
 
 			// Called by MDM to disable user input
 			function mdm_disable() {
-				document.getElementById("entry").value = "disabled";
 				document.getElementById("entry").disabled = "disabled";
+				document.getElementById("pass").disabled = "disabled";
 				document.getElementById("submit-btn").disabled = "disabled";
 			}
 
 			// Called by MDM to enable user input
 			function mdm_enable() {
-				document.getElementById("entry").value = "false";
 				document.getElementById("entry").disabled = false;
+				document.getElementById("pass").disabled = false;
 				document.getElementById("submit-btn").disabled = false;
 			}
 
@@ -60,7 +60,7 @@
 
 			// Called by MDM to show an error
 			function mdm_error(message) {
-				if (message != "") {
+				if (message !== "") {
 					document.getElementById("error").style.display = 'block';
 				}
 				else {
@@ -84,7 +84,7 @@
 
 			// Called by MDM to add a user to the list of users
 			function mdm_add_user(username, gecos) {
-					link.setAttribute('href', "javascript:alert('USER###"+username+"')");
+					link.setAttribute('href', "javascript:alert('USER###" + username + "')");
 					picture.setAttribute('src', "file:///home/"+username+"/.face");
 					picture.setAttribute('onerror', "this.src='file:///usr/share/pixmaps/nobody.png';");
 			}
@@ -157,7 +157,7 @@
 		</div>
 
 		<div id="login-box">
-			<h1 id="login-message">Log in</h1>
+			<h1 id="login-message">Hola de nuevo</h1>
 
 			<div id="error"></div>
 
