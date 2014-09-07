@@ -10,15 +10,11 @@
 			// Called by MDM to disable user input
 			function mdm_disable() {
 				document.getElementById("entry").disabled = "disabled";
-				document.getElementById("pass").disabled = "disabled";
-				document.getElementById("submit-btn").disabled = "disabled";
 			}
 
 			// Called by MDM to enable user input
 			function mdm_enable() {
 				document.getElementById("entry").disabled = false;
-				document.getElementById("pass").disabled = false;
-				document.getElementById("submit-btn").disabled = false;
 			}
 
 			// Called by MDM to set the welcome message
@@ -36,23 +32,29 @@
 				mdm_enable();
 
 				document.getElementById("entry").value = "";
+				document.getElementById("entry").type = 'text';
 				document.getElementById("entry").focus();
+			}
 
-				document.getElementById("pass").value = "";
+			function set_msg(message) {
+				document.getElementById("message").innerHTML = message;
+				document.getElementById("message").className = "";
 			}
 
 			// Called by MDM to allow the user to input a password
 			function mdm_noecho(message) {
 				mdm_enable();
 
-				document.getElementById("pass").value = "";
-				document.getElementById("pass").focus();
+				set_msg('Teclear contraseña');
+
+				document.getElementById("entry").value = "";
+				document.getElementById("entry").type = "password";
+				document.getElementById("entry").focus();
 			}
 
 			// Called by MDM to show a message (usually "Please enter your username")
 			function mdm_msg(message) {
-				document.getElementById("message").innerHTML = message;
-				document.getElementById("message").className = "";
+				set_msg("Teclear nombre de usuario");
 			}
 
 			// Called by MDM to show a timed login countdown
@@ -71,12 +73,10 @@
 				// read the value before we disable the field,
 				// as it will be changed to "disabled"
 				var username = document.getElementById("entry").value;
-				var password = document.getElementById("pass").value;
 
 				mdm_disable();
 
 				alert("LOGIN###" + username);
-				alert("LOGIN###" + password);
 
 				return false;
 			}
@@ -94,10 +94,8 @@
 			function mdm_add_session(session_name, session_file) {
 				session_name = session_name.replace("Ubuntu", "Unity");
 
-				var filename = session_name.toLowerCase();
-				filename = filename.replace(/ /g, "-");
-				filename = filename.replace(/\(/g, "");
-				filename = filename.replace(/\)/g, "");
+				var filename = session_file.toLowerCase();
+					filename = filename.split('.')[0];
 
 				var li = document.createElement('li');
 
@@ -108,6 +106,7 @@
 					picture.setAttribute('class', "session-picture");
 					picture.setAttribute('src', "assets/img/sessions/"+filename+".svg");
 					picture.setAttribute('onerror', "this.src='assets/img/sessions/default.svg';");
+					picture.setAttribute('title', session_name);
 
 				li.appendChild(link);
 				link.appendChild(picture);
@@ -168,22 +167,17 @@
 
 		<div id="login-box">
 			<h1 id="login-message">Welcome</h1>
-			<h3 id="login-clock"></h3>
 			<h4 id="login-countdown"></h3>
 
-			<div id="message" class="verde azul"></div>
+			<h4 id="message"></h4>
 
 			<div id="form-wrapper">
 				<form class="form-inline" onSubmit="return send_login();">
-					<input type="text" id="entry" placeholder="Nombre de usuario">
-
-					<input type="password" id="pass" placeholder="Contraseña">
-
-					<div id="submit-button-wrapper">
-						<button type="submit" id="submit-btn">Ok</button>
-					</div>
+					<input type="text" id="entry">
 				</form>
 			</div>
+
+			<h3 id="login-clock"></h3>
 		</div>
 
 		<div id="sessions-box"></div>

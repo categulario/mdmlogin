@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg2"
+   sodipodi:docname="ssh.svg"
+   viewBox="0 0 700 700"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   width="100%"
+   height="100%">
+  <defs
+     id="defs4">
+    <filter
+       id="filter3801"
+       height="1.9826"
+       width="1.9997"
+       y="-0.49131"
+       x="-0.49985999"
+       inkscape:collect="always"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         id="feGaussianBlur3803"
+         stdDeviation="68.43262"
+         inkscape:collect="always" />
+    </filter>
+    <linearGradient
+       id="linearGradient3830"
+       y2="-144.78"
+       gradientUnits="userSpaceOnUse"
+       x2="23.570999"
+       y1="438.07999"
+       x1="359.29001"
+       inkscape:collect="always"
+       gradientTransform="matrix(1.1075787,0,0,1.1075787,-72.615606,221.01007)">
+      <stop
+         id="stop3826"
+         style="stop-color:#1a1a1a"
+         offset="0" />
+      <stop
+         id="stop3828"
+         style="stop-color:#1a1a1a;stop-opacity:0"
+         offset="1" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     bordercolor="#666666"
+     inkscape:pageshadow="2"
+     inkscape:window-y="41"
+     pagecolor="#ffffff"
+     inkscape:window-height="1009"
+     inkscape:window-maximized="1"
+     inkscape:zoom="0.49497475"
+     inkscape:window-x="0"
+     showgrid="false"
+     borderopacity="1.0"
+     inkscape:current-layer="layer1"
+     inkscape:cx="-140.71429"
+     inkscape:cy="486.25807"
+     inkscape:window-width="1920"
+     inkscape:pageopacity="0.0"
+     inkscape:document-units="px" />
+  <g
+     id="layer1"
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     transform="translate(0,-352.4)">
+    <path
+       id="path3763"
+       style="opacity:0.86830995;color:#000000;fill:#fafbff;fill-opacity:0.90013996;stroke:#7c14b2;filter:url(#filter3801)"
+       inkscape:connector-curvature="0"
+       d="m -665.71,-11.924 c 0,92.31 -73.553,167.14 -164.29,167.14 -90.732,0 -164.29,-74.832 -164.29,-167.14 0,-92.31 73.553,-167.14 164.29,-167.14 90.732,0 164.29,74.832 164.29,167.14 z" />
+    <rect
+       id="rect3822"
+       style="color:#000000;fill:url(#linearGradient3830);stroke:#cccccc;stroke-width:33.22735977"
+       height="487.33463"
+       width="613.91974"
+       y="462.55084"
+       x="44.466537" />
+    <path
+       id="path3836"
+       style="color:#000000;fill:#cccccc;stroke-width:0"
+       d="m 135.29379,677.10528 c -0.32929,-9.17899 -0.98781,-28.27739 -0.98781,-28.27739 l 65.18199,-47.82254 -67.5413,-37.93391 c 0,0 -0.44275,-20.84187 -0.66417,-32.48869 l 124.95992,70.33207 z"
+       inkscape:transform-center-x="-19.490174"
+       inkscape:transform-center-y="0.97629455"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccc" />
+    <rect
+       id="rect3855"
+       style="color:#000000;fill:#cccccc;fill-opacity:0.89498004;stroke-width:0"
+       height="15.822869"
+       width="158.22868"
+       y="700.80328"
+       x="249.24551" />
+    <text
+       xml:space="preserve"
+       style="font-size:210.26112366px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Monospace;-inkscape-font-specification:Monospace"
+       x="297.9519"
+       y="841.05103"
+       id="text3000"
+       sodipodi:linespacing="125%"
+       transform="scale(0.93620959,1.0681369)"><tspan
+         sodipodi:role="line"
+         id="tspan3002"
+         x="297.9519"
+         y="841.05103">ssh</tspan></text>
+  </g>
+  <metadata
+     id="metadata23">
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/publicdomain/" />
+        <dc:publisher>
+          <cc:Agent
+             rdf:about="http://openclipart.org/">
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:title></dc:title>
+        <dc:date>2012-08-16T10:14:10</dc:date>
+        <dc:description>Its the Terminal icon</dc:description>
+        <dc:source>https://openclipart.org/detail/171762/terminal-by-lpr577-171762</dc:source>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>lpr577</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>DOS</rdf:li>
+            <rdf:li>UNIX</rdf:li>
+            <rdf:li>terminal</rdf:li>
+            <rdf:li>icon</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>
