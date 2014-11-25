@@ -6,4 +6,13 @@ Login screen for mdm
 Instalation
 -----------
 
-Move this repo to `/usr/share/mdm/html-themes/` and activate it in your system settings
+(Requires `node`, `bower` and `grunt`)
+
+`$ npm install`
+`$ bower install`
+
+Then
+
+`$ grunt`
+
+Compress the folder and use your settings manager to install the compressed file.
